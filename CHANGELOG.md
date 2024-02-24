@@ -1,3 +1,15 @@
+# v0.0.7 (Sat Feb 24 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: postinstall removed (maksimgrinberg01@gmail.com)
+
+#### Authors: 1
+
+- mnik01 (maksimgrinberg01@gmail.com)
+
+---
+
 # v0.0.6 (Sat Feb 24 2024)
 
 #### ⚠️ Pushed to `main`
