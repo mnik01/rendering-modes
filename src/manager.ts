@@ -5,7 +5,7 @@ import { Tool } from './Tool';
 // @ts-expect-error idk why deprecated
 addons.register(ADDON_ID, () => addons.add(TOOL_ID, {
   type: types.TOOL,
-  title: 'Render Modes',
+  title: 'storybook-addon-render-modes',
   match: ({ viewMode }) => !!(viewMode && viewMode.match(/^(story|docs)$/)),
   render: Tool,
 }));
