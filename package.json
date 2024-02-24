@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-render-modes",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Storybook addon that adds ability to change render mode of a story",
   "keywords": [
     "storybook-addons",
