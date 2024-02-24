@@ -7,6 +7,22 @@
   display: inline-block;
   line-height: 1;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-safe\:bg-red-600 {
+    --tw-bg-opacity: 1;
+    background-color: tomato !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reduce\:bg-blue-600 {
+    --tw-bg-opacity: 1;
+    background-color: darkblue !important;
+  }
+}
+
+
 .storybook-button--primary {
   color: white;
   background-color: #1ea7fd;

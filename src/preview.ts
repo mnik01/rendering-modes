@@ -1,3 +1,4 @@
+import * as options from "./options";
 /**
  * A decorator is a way to wrap a story in extra “rendering” functionality. Many addons define decorators
  * in order to augment stories:
@@ -8,7 +9,7 @@
  *
  * https://storybook.js.org/docs/react/writing-stories/decorators
  */
-import type { Renderer, ProjectAnnotations } from "@storybook/types";
+import type { Renderer, ProjectAnnotations, GlobalTypes } from "@storybook/types";
 import { PARAM_KEY } from "./constants";
 import { withGlobals } from "./withGlobals";
 import { withRoundTrip } from "./withRoundTrip";
@@ -26,3 +27,17 @@ const preview: ProjectAnnotations<Renderer> = {
 };
 
 export default preview;
+
+export const globalTypes = Object.entries(options.features).reduce(
+  (globalTypes: GlobalTypes, [name, value]) =>
+    Object.assign(globalTypes, {
+      [name]: {
+        name,
+        type: {
+          name: "enum",
+          value,
+        },
+      },
+    } as unknown as GlobalTypes),
+  {}
+);

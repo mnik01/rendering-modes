@@ -1,61 +1,30 @@
-import type {
-  Renderer,
-  PartialStoryFn as StoryFunction,
-  StoryContext,
-} from "@storybook/types";
-import { useEffect, useGlobals } from "@storybook/preview-api";
-import { PARAM_KEY } from "./constants";
+import type { Renderer, PartialStoryFn as StoryFunction, StoryContext, Globals } from '@storybook/types';
+import { processCSS } from "./processCSS";
+import { useEffect, useGlobals } from '@storybook/preview-api';
+import { PARAM_KEY } from './constants';
 
-export const withGlobals = (
-  StoryFn: StoryFunction<Renderer>,
-  context: StoryContext<Renderer>
-) => {
-  const [globals] = useGlobals();
-  const myAddon = globals[PARAM_KEY];
+export const withGlobals = (StoryFn: StoryFunction<Renderer>, context: StoryContext<Renderer>) => {
+  const [globals, updateGlobals] = useGlobals();
+
+  const isActive = [true, 'true'].includes(globals[PARAM_KEY]);
+
   // Is the addon being used in the docs panel
-  const isInDocs = context.viewMode === "docs";
-  const { theme } = context.globals;
+  const isInDocs = context.viewMode === 'docs';
+
+  // apply user parameter overrides
+  const overrides = Object.assign({}, context.parameters[PARAM_KEY]) as Globals
+  let feature: keyof Globals;
+  for (feature in overrides) {
+    if (globals[feature] === undefined && overrides[feature] !== undefined) {
+      updateGlobals(overrides)
+      break
+    }
+  }
+
 
   useEffect(() => {
-    // Execute your side effect here
-    // For example, to manipulate the contents of the preview
-    const selector = isInDocs
-      ? `#anchor--${context.id} .sb-story`
-      : "#storybook-root";
-
-    displayToolState(selector, {
-      myAddon,
-      isInDocs,
-      theme,
-    });
-  }, [myAddon, theme]);
+    processCSS(document.styleSheets, globals);
+  }, Object.values(globals));
 
   return StoryFn();
 };
-
-function displayToolState(selector: string, state: any) {
-  const rootElements = document.querySelectorAll(selector);
-
-  rootElements.forEach((rootElement) => {
-    let preElement = rootElement.querySelector<HTMLPreElement>(
-      `${selector} pre`
-    );
-
-    if (!preElement) {
-      preElement = document.createElement("pre");
-      preElement.style.setProperty("margin-top", "2rem");
-      preElement.style.setProperty("padding", "1rem");
-      preElement.style.setProperty("background-color", "#eee");
-      preElement.style.setProperty("border-radius", "3px");
-      preElement.style.setProperty("max-width", "600px");
-      preElement.style.setProperty("overflow", "scroll");
-      rootElement.appendChild(preElement);
-    }
-
-    preElement.innerText = `This snippet is injected by the withGlobals decorator.
-It updates as the user interacts with the ⚡ or Theme tools in the toolbar above.
-
-${JSON.stringify(state, null, 2)}
-`;
-  });
-}

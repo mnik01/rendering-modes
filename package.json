@@ -1,17 +1,20 @@
 {
-  "name": "storybook-addon-kit",
-  "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "name": "storybook-addon-render-modes",
+  "version": "0.0.1",
+  "description": "Storybook addon that adds ability to change render mode of a story",
   "keywords": [
-    "storybook-addons"
+    "storybook-addons",
+    "storybook-addon-render-modes",
+    "render-modes",
+    "prefers-reduced-motion"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/mnik01/rendering-modes"
   },
   "type": "module",
   "license": "MIT",
-  "author": "package-author",
+  "author": "Maxim Nikonov",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -46,6 +49,17 @@
     "eject-ts": "zx scripts/eject-typescript.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "@storybook/blocks": "^7.0.0",
+    "@storybook/components": "^7.0.0",
+    "@storybook/core-events": "^7.0.0",
+    "@storybook/manager-api": "^7.0.0",
+    "@storybook/preview-api": "^7.0.0",
+    "@storybook/theming": "^7.0.0",
+    "@storybook/types": "^7.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "8.0.0-beta.2",
@@ -100,9 +114,9 @@
     ]
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Render Modes",
     "supportedFrameworks": [
-      "supported-frameworks"
+      "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   }
