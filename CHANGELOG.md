@@ -1,3 +1,15 @@
+# v0.0.9 (Sun Feb 25 2024)
+
+#### ⚠️ Pushed to `main`
+
+- docs: updated readme (maksimgrinberg01@gmail.com)
+
+#### Authors: 1
+
+- mnik01 (maksimgrinberg01@gmail.com)
+
+---
+
 # v0.0.7 (Sat Feb 24 2024)
 
 #### ⚠️ Pushed to `main`
