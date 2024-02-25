@@ -1,12 +1,31 @@
 {
   "name": "storybook-addon-render-modes",
-  "version": "0.0.8",
-  "description": "Storybook addon that adds ability to change render mode of a story",
+  "version": "0.0.9",
+  "description": "Storybook addon that adds ability to emulate render mode (css user preferences) of a story",
   "keywords": [
     "storybook-addons",
     "storybook-addon-render-modes",
     "render-modes",
-    "prefers-reduced-motion"
+    "prefers-reduced-motion",
+    "storybook-addons",
+    "conditions",
+    "css",
+    "emulate",
+    "emulates",
+    "emulation",
+    "media",
+    "query",
+    "queries",
+    "preferences",
+    "prefers-color-scheme",
+    "prefers-contrast",
+    "prefers-reduced-data",
+    "prefers-reduced-motion",
+    "prefers-reduced-transparency",
+    "prefs",
+    "toolbar",
+    "user",
+    "storybook-addons"
   ],
   "repository": {
     "type": "git",
@@ -14,7 +33,7 @@
   },
   "type": "module",
   "license": "MIT",
-  "author": "Maxim Nikonov",
+  "author": "Maxim Nikonov <maksimgrinberg01@gmail.com>",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -115,7 +134,13 @@
   "storybook": {
     "displayName": "Render Modes",
     "supportedFrameworks": [
-      "react"
+      "react",
+      "react",
+      "vue",
+      "angular",
+      "html",
+      "svelte",
+      "preact"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   }
