@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-render-modes",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Storybook addon that adds ability to emulate render mode (css user preferences) of a story",
   "keywords": [
     "storybook-addons",
@@ -68,8 +68,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "peerDependencies": {
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@storybook/addon-essentials": "8.0.0-beta.2",
     "@storybook/addon-interactions": "8.0.0-beta.2",
