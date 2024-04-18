@@ -2,6 +2,20 @@
 
 #### ⚠️ Pushed to `main`
 
+- upd (maksimgrinberg01@gmail.com)
+- fix: log ([@mnik01](https://github.com/mnik01))
+
+#### Authors: 2
+
+- Maxim ([@mnik01](https://github.com/mnik01))
+- mnik01 (maksimgrinberg01@gmail.com)
+
+---
+
+# v0.0.11 (Thu Apr 18 2024)
+
+#### ⚠️ Pushed to `main`
+
 - fix: log ([@mnik01](https://github.com/mnik01))
 
 #### Authors: 1
