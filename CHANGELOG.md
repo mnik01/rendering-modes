@@ -1,3 +1,15 @@
+# v0.0.11 (Thu Apr 18 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: log ([@mnik01](https://github.com/mnik01))
+
+#### Authors: 1
+
+- Maxim ([@mnik01](https://github.com/mnik01))
+
+---
+
 # v0.0.9 (Sun Feb 25 2024)
 
 #### ⚠️ Pushed to `main`
