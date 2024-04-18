@@ -50,7 +50,6 @@ export function processCSS(
         console.log(1)
         target.media.mediaText = currentMediaText;
       }
-      console.log(2)
     } else if ("cssRules" in target) {
       processCSS(target.cssRules, features);
     }
