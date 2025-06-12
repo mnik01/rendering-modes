@@ -57,6 +57,7 @@
   ],
   "scripts": {
     "clean": "rimraf ./dist",
+    "prepare": "npm run build",
     "prebuild": "npm run clean",
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
