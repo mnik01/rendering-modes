@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode, ComponentProps } from "react";
-import { styled } from "@storybook/theming";
+import { styled } from "storybook/theming";
 import { transparentize } from "polished";
 
 export interface TitleProps {}

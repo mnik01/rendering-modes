@@ -1,5 +1,5 @@
 
-import { Globals } from "@storybook/types";
+import { Globals } from "storybook/internal/types";
 import * as options from "./options";
 
 /** Recursively process CSS and transform media queries based on feature flags. */

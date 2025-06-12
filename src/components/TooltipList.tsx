@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { styled } from "@storybook/theming";
+import { styled } from "storybook/theming";
 import ListItem, { ListItemProps } from "./List";
 
 const List = styled.div<{}>(
