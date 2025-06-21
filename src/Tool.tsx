@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import * as options from "./options";
 import type { WithHideFn } from "./types";
-import { useGlobals, useStorybookApi } from '@storybook/manager-api';
-import { IconButton, WithTooltip } from '@storybook/components';
+import { useGlobals, useStorybookApi } from 'storybook/manager-api';
+import { IconButton, WithTooltip } from 'storybook/internal/components';
 import { ADDON_ID, PARAM_KEY, TOOL_ID } from './constants';
 import { TooltipList } from "./components/TooltipList";
-import { Globals } from '@storybook/types';
+import { Globals } from 'storybook/internal/types';
 
 export const Tool = memo(function MyAddonSelector() {
   const [globals, updateGlobals] = useGlobals();
